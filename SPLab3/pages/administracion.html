@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CDN-BootStrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/app.js" type="module" defer></script>
+    <title>SPLab3-MatiasFerrari</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <img src="../img/logoPerro3.jpg" alt="Logo Empresa" id="logo">
+                <ul class="navbar-expand-lg navbar-light text-center">
+                    <li class="nav-item"> 
+                        <a class="navbar-text" id="links" href="#">Nosotros</a> 
+                    </li><br>
+                    <li class="nav-item"> 
+                        <a class="navbar-text" id="links" href="./administracion.html">Anuncio</a> 
+                    </li><br>
+                    <li class="nav-item"> 
+                        <a class="navbar-text" id="links" href="#">Blog</a> 
+                    </li><br>
+                    <li class="nav-item"> 
+                        <a class="navbar-text" id="links" href="#">Contacto</a> 
+                    </li><br>
+                </ul>
+            </div>
+        </nav>
+        <section>
+                <h1 class="titulo">Administracion</h1>
+                <div class="container-fluid backgroundImg"></div>
+        </section>
+    </header>
+    <main>
+        <fieldset class="border border-dark rounded">
+            <div class="container">
+            <legend class="text-center">Informacion Del Anuncio</legend>
+            <form>
+                <input type="hidden" name="formId" id="id">
+                
+                <label for="txtTitulo">Titulo:</label> <br>
+                <input type="text" id="txtTitulo" name="Titulo" placeholder="Titulo" required>
+                <small></small> 
+                <br>
+                
+                <label for="txtDescripcion">Descripcion:</label> <br>
+                <input type="text" id="txtDescripcion" name="Descripcion" placeholder="Descripcion" required> 
+                <small></small>
+                <br>
+
+                <label for="radioAnimal">Animal:</label> <br> <br>
+                <div class="container text-center">            
+                <label> Perro <input type="radio" name="radioAnimal" value="Perro" checked/></label>
+                <label> Gato <input type="radio" name="radioAnimal" value="Gato"/></label><br>
+                </div>
+
+
+                <label for="numPrecio">Precio:</label> <br>
+                <input type="number" id="numPrecio" name="numPrecio" placeholder="Precio" min="0" max="50000" required>
+                <small></small> 
+                <br>
+                
+                <div class="icons">
+                    <span><img src="../img/razaicono.png" alt="Icon raza"></span>
+                    <input type="text" name="Raza" id="txtRaza" min="2" placeholder="Raza" class="inputIcon">
+                    <small></small>
+                    
+                    <span><img src="../img/cigueña.png" alt="Icon fecha nacimiento"></span>
+                    <input type="date" name="fecha" id="fechaNacimiento" min="1" placeholder="dd/mm/aaaa"  class="inputIcon">
+                    
+                    <span><img src="../img/sangre.png" alt="Icon tipo sangre"></span>
+                    <select name="tipoSangre" id="tipoSangre" placeholder="---Elegir---">
+                        <option value="Si">SI</option>
+                        <option value="No">NO</option>
+                    </select>
+                </div>
+                
+        </fieldset>
+            <div class="divBotones">
+                <button type="submit" id="btnSubmit" class="formButton">
+                    <span><img src="../img/iconoGuardar.png" alt="save icon" id="icon"></span>
+                    Guardar
+                </button>
+                    <button type="reset" id="btnCancelar" class="formButton">
+                        <span><img src="../img/source_icons_cancel.svg" alt="cancel icon" id="icon"></span>
+                        Cancelar
+                    </button>
+                    <button type="submit" id="btnActualizar" class="formButton hidden">
+                        <span><img src="../img/source_icons_upload-square-outline.svg" alt="upload icon" id="icon"></span>
+                        Modificar
+                    </button>
+                    <button type="button" id="btnEliminar" class="formButton hidden">
+                        <span><img src="../img/source_icons_trash.svg" alt="trash icon" id="icon"></span>
+                        Eliminar
+                    </button>
+                </div>        
+            </form>
+        </div>
+            <div id="spinner">
+            </div>
+            <br><br>
+        <!-- Filtros -->
+        <div class="container filtro">
+            <div class="row text-center " id="filtros">
+                <div class="col-5 pt-4 center-block">
+                    <div class="dropdown">
+                        <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            Filtros:
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <button class="dropdown-item" id="btnFiltroTodos" type="button">Todos</button>
+                            <button class="dropdown-item" id="btnFiltroGatos" type="button">Gatos</button>
+                            <button class="dropdown-item" id="btnFiltroPerros" type="button">Perros</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <label class="col-form-label">Promedio</label>
+                    <div class="pb-3">
+                        <input class="form-control" type="text" id="txtPromedio" value="N/A" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkboxs -->
+        <div class="container pt-3 text-center">
+            <div class="row">
+                <div class="container pb-3 text-center">
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="cBoxtitulo">
+                        <input class="cBox form-check-input" type="checkbox" id="cBoxtitulo" checked>Titulo</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="cBoxdescripcion">
+                        <input class="cBox form-check-input" type="checkbox" id="cBoxdescripcion" checked>Descripcion</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="cBoxanimal"> 
+                        <input class="cBox form-check-input" type="checkbox" id="cBoxanimal" checked>Transaccion</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="cBoxprecio">
+                        <input class="cBox form-check-input" type="checkbox" id="cBoxprecio" checked>Precio</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="cBoxraza">
+                        <input class="cBox form-check-input"type="checkbox" id="cBoxraza" checked>Raza</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="cBoxfecha">
+                        <input class="cBox form-check-input" type="checkbox" id="cBoxfecha" checked>Fecha</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="cBoxvacuna">
+                        <input class="cBox form-check-input" type="checkbox" id="cBoxvacuna" checked>Vacunas</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla -->
+        <section>
+            <div class="container pb-3">
+                <div class="row text-center table-responsive " id="divTabla"></div>
+            </div>  
+        </section>
+
+
+            <div class="linkMainPage">
+                <a href="../principal.html" >Ir a la Pagina Principal</a>
+            </div>
+            
+            <footer>
+                    <ul class="linksfooter">
+                        <li> <a id="links" href="#">Nosotros</a> </li> &nbsp;&nbsp;
+                        <li> <a id="links" href="./administracion.html">Anuncio</a> </li>&nbsp;&nbsp;
+                        <li> <a id="links" href="#">Blog</a> </li>&nbsp;&nbsp;
+                        <li> <a id="links" href="#">Contacto</a> </li>
+                    </ul>
+                    <p id="copyright"> <i> Todos nuestros derechos reservados &copy; 2022</i> </p>
+            </footer>
+
+    </main>
+</body>
+</html>

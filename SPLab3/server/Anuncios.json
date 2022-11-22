@@ -1,0 +1,54 @@
+{
+  "anuncios": [
+    {
+      "id": 1,
+      "titulo": "Brunhilda",
+      "descripcion": "Calculus of ureter",
+      "animal": "Gato",
+      "precio": "2702",
+      "raza": "Persa",
+      "fechaNacimiento": "2021-11-01",
+      "vacuna": "Si"
+    },
+    {
+      "id": 2,
+      "titulo": "Alli",
+      "descripcion": "Fx bimalleolar-open",
+      "animal": "Perro",
+      "precio": 1374,
+      "raza": "Doberman",
+      "fechaNacimiento": "2019-10-09",
+      "vacuna": "No"
+    },
+    {
+      "id": 5,
+      "titulo": "Perro",
+      "descripcion": "Artic cartil dis-hand",
+      "animal": "Perro",
+      "precio": 787,
+      "raza": "German Shepard",
+      "fechaNacimiento": "2021-06-08",
+      "vacuna": "No"
+    },
+    {
+      "id": 6,
+      "titulo": "Julio",
+      "descripcion": "Calculus of ureter",
+      "animal": "Gato",
+      "precio": "1545",
+      "raza": "Ingles",
+      "fechaNacimiento": "2022-11-03",
+      "vacuna": "Si"
+    },
+    {
+      "id": 8,
+      "titulo": "Saddie",
+      "descripcion": "Perro muy jugueton y activo",
+      "animal": "Perro",
+      "precio": "902",
+      "raza": "Husky",
+      "fechaNacimiento": "2022-11-02",
+      "vacuna": "No"
+    }
+  ]
+}
